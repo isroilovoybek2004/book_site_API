@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Books  {% endblock title %}
+{% block content %}
+<h2>Landing page</h2>
+{% for book in books %}
+    <a href="{% url 'books:book-detail' %}">
+    <img src="{{ book.image_book.url }}"><br>
+        {{ book.title }}</a><hr>
+{% endfor %}
+
+{% endblock content %}
